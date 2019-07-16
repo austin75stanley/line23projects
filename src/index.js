@@ -1,3 +1,8 @@
 let app = document.querySelector('#app')
 
-app.innerHTML = '<h2>Welcome to weighttool</h2>'
+app.innerHTML = '<h2 style="text-align: center;">Weight Conversion Tool</h2>'
+
+function Compute(){
+
+    alert("Hey there!");
+}

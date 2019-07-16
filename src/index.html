@@ -1,13 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>weighttool</title>
-    <meta name="description" content="">
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>weighttool</title>
+  <meta name="description" content="">
+  <link href="./style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="center" id="mydiv">
     <div id="app"></div>
-  </body>
+    <form>
+      <p>
+        <h4>Enter your Weight and select Measurement Unit</h4>
+
+        <input id="inputPounds" type="number" placeholder="Enter your weight">
+        <select name="">
+          <option value="kilograms">Kilograms</option>
+          <option value="grams">Grams</option>
+          <option value="ounces">Ounces</option>
+          <option value="stones">Stones</option>
+          <option value="stones">Pounds</option>
+        </select>
+        <h4>Select a measurement unit to convert to</h4>
+        <select name="">
+          <option value="kilograms">Kilograms</option>
+          <option value="grams">Grams</option>
+          <option value="ounces">Ounces</option>
+          <option value="stones">Stones</option>
+          <option value="stones">Pounds</option>
+        </select>
+
+        <button onclick="Compute()">Compute</button>
+
+      </p>
+    </form>
+    <p id="returnvalue">Value:</p>
+
+  </div>
+
+
+</body>
+
 </html>
