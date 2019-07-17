@@ -8,17 +8,19 @@
   <title>weighttool</title>
   <meta name="description" content="">
   <link href="./style.css" rel="stylesheet" />
+ 
 </head>
 
 <body>
   <div class="center" id="mydiv">
     <div id="app"></div>
-    <form>
+    
+        <form id="formid" method="POST" name="myform"></form>
       <p>
         <h4>Enter your Weight and select Measurement Unit</h4>
 
-        <input id="inputPounds" type="number" placeholder="Enter your weight">
-        <select name="">
+        <input id="weight" type="number" placeholder="Enter your weight">
+        <select id="selectedweight">
           <option value="kilograms">Kilograms</option>
           <option value="grams">Grams</option>
           <option value="ounces">Ounces</option>
@@ -26,23 +28,18 @@
           <option value="stones">Pounds</option>
         </select>
         <h4>Select a measurement unit to convert to</h4>
-        <select name="">
+        <select id="weightselected">
           <option value="kilograms">Kilograms</option>
           <option value="grams">Grams</option>
           <option value="ounces">Ounces</option>
           <option value="stones">Stones</option>
-          <option value="stones">Pounds</option>
+          <option value="pounds">Pounds</option>
         </select>
 
-        <button onclick="Compute()">Compute</button>
-
+        <button id="compute"> Compute</button>
       </p>
     </form>
     <p id="returnvalue">Value:</p>
-
   </div>
-
-
 </body>
-
 </html>
