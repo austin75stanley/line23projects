@@ -7,20 +7,18 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>weighttool</title>
   <meta name="description" content="">
-  <link href="./style.css" rel="stylesheet" />
-   
+  <link href="./style.css" rel="stylesheet" >
 </head>
 
 <body>
   <div class="center" id="mydiv">
-    <div id="app"></div>
     
-        <form id="formid" method="POST" name="myform"></form>
+    <h2 class="posn">Weight Conversion Tool</h2>
       <p>
         <h4>Enter your Weight and select Measurement Unit</h4>
 
-        <input id="weight" type="number" placeholder="Enter your weight">
-        <select id="selectedweight">
+        <input class="txt" id="weight" type="number" placeholder="Enter your weight">
+        <select class="k" id="selectedweight">
           <option value="kilograms">Kilograms</option>
           <option value="grams">Grams</option>
           <option value="ounces">Ounces</option>
@@ -28,7 +26,7 @@
           <option value="stones">Pounds</option>
         </select>
         <h4>Select a measurement unit to convert to</h4>
-        <select id="weightselected">
+        <select class="k" id="weightselected">
           <option value="kilograms">Kilograms</option>
           <option value="grams">Grams</option>
           <option value="ounces">Ounces</option>
@@ -36,11 +34,11 @@
           <option value="pounds">Pounds</option>
         </select>
 
-        <button id="compute" class="button button2">Compute</button>
-        <button id="clear">Clear</button>
+        <button id="compute" class="btn-success">Compute</button>
+        <button id="clear" class="btn-info">Clear</button>
       </p>
     </form>
-    <p id="returnvalue">Value:</p>
+    <div id="returnvalue"><span>Value:</span></div>
   </div>
 </body>
 </html>
