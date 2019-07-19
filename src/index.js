@@ -1,27 +1,27 @@
 
 document.getElementById('clear').onclick = function (event) {
     event.preventDefault()
-    document.getElementById("returnvalue").innerHTML = "";
+    document.getElementById("returnvalue").value= "";
 }
 
-var convertKilograms = function () {
-    var weight = document.getElementById("weight").value;
-    var convertweight = document.getElementById("weightselected").value;
+
+var convertKilograms = function (weight,convertweight) {
     const k1 = 1000
     const k2 = 2.2046
     const k3 = 35.274
     const k4 = 0.1574
     if (convertweight === "grams") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) * k1;
+        
+        document.getElementById('returnvalue').value =parseFloat(weight) * k1;
     } else if (convertweight === "pounds") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) * k2;
+        document.getElementById("returnvalue").value = parseFloat(weight) * k2;
     } else if (convertweight === "ounces") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) * k3;
+        document.getElementById("returnvalue").value = parseFloat(weight) * k3;
     } else if (convertweight === "stones") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) * k4;
+        document.getElementById("returnvalue").value = parseFloat(weight) * k4;
     }
 }
-var convertGrams = function () {
+var convertGrams = function (weight,convertweight) {
     var weight = document.getElementById("weight").value;
     var convertweight = document.getElementById("weightselected").value;
     const g1 = 1000
@@ -30,20 +30,20 @@ var convertGrams = function () {
     const g4 = 0.00015747
 
     if (convertweight === "kilograms") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) / g1;
+        document.getElementById("returnvalue").value = parseFloat(weight) / g1;
     }
     else if (convertweight === "pounds") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) * g2;
+        document.getElementById("returnvalue").value = parseFloat(weight) * g2;
     }
     else if (convertweight === "ounces") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) * g3;
+        document.getElementById("returnvalue").value = parseFloat(weight) * g3;
     }
     else if (convertweight === "stones") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) * g4;
+        document.getElementById("returnvalue").value = parseFloat(weight) * g4;
     }
 
 }
-var convertPounds = function () {
+var convertPounds = function (weight,convertweight) {
     var weight = document.getElementById("weight").value;
     var convertweight = document.getElementById("weightselected").value;
     const p1 = 16
@@ -51,19 +51,19 @@ var convertPounds = function () {
     const p3 = 0.0022046
     const p4 = 0.071429
     if (convertweight === "ounces") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) * p1;
+        document.getElementById("returnvalue").value = parseFloat(weight) * p1;
     }
     else if (convertweight === "kilograms") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) / p2;
+        document.getElementById("returnvalue").value = parseFloat(weight) / p2;
     }
     else if (convertweight === "grams") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) / p3;
+        document.getElementById("returnvalue").value = parseFloat(weight) / p3;
     }
     else if (convertweight === "stones") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) * p4;
+        document.getElementById("returnvalue").value = parseFloat(weight) * p4;
     }
 }
-var convertOunces = function () {
+var convertOunces = function (weight,convertweight) {
     var weight = document.getElementById("weight").value;
     var convertweight = document.getElementById("weightselected").value;
     const o1 = 0.0625
@@ -71,56 +71,56 @@ var convertOunces = function () {
     const o3 = 0.035274
     const o4 = 0.0044643
     if (convertweight === "pounds") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) * o1;
+        document.getElementById("returnvalue").value = parseFloat(weight) * o1;
     }
     else if (convertweight === "kilograms") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) / o2;
+        document.getElementById("returnvalue").value = parseFloat(weight) / o2;
     }
     else if (convertweight === "grams") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) / o3;
+        document.getElementById("returnvalue").value = parseFloat(weight) / o3;
     }
     else if (convertweight === "stones") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) * o4;
+        document.getElementById("returnvalue").value = parseFloat(weight) * o4;
     }
 }
-var convertStones = function () {
-    var weight = document.getElementById("weight").value;
-    var convertweight = document.getElementById("weightselected").value;
+var convertStones = function (weight,convertweight) {
     const s1 = 224
     const s2 = 0.15747
     const s3 = 0.00015747 
     const s4 = 14
     if (convertweight === "ounces") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) * s1;
+        document.getElementById("returnvalue").value = parseFloat(weight) * s1;
     }
     else if (convertweight === "kilograms") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) / s2;
+        document.getElementById("returnvalue").value = parseFloat(weight) / s2;
     }
     else if (convertweight === "grams") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) / s3;
+        document.getElementById("returnvalue").value = parseFloat(weight) / s3;
     }
     else if (convertweight === "pounds") {
-        document.getElementById("returnvalue").innerHTML = parseFloat(weight) * s4;
+        document.getElementById("returnvalue").value = parseFloat(weight) * s4;
     }
 
 }
 
 var button = document.getElementById('compute').onclick = function (event) {
     event.preventDefault();
+    var weight = document.getElementById("weight").value;
+    var convertweight = document.getElementById("weightselected").value;
     var selectedweight = document.getElementById("selectedweight").value;
     if (selectedweight === "kilograms") {
-        convertKilograms();
+        convertKilograms(weight,convertweight);
     }
     else if (selectedweight === "grams") {
-        convertGrams();
+        convertGrams(weight,convertweight);
     }
     else if (selectedweight === "pounds") {
-        convertPounds();
+        convertPounds(weight,convertweight);
     }
     else if (selectedweight === "ounces") {
-        convertOunces();
+        convertOunces(weight,convertweight);
     }
     else if (selectedweight === "stones") {
-        convertStones();
+        convertStones(weight,convertweight);
     }
 }
