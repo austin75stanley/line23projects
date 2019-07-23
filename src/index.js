@@ -1,15 +1,59 @@
 
 document.getElementById('clear').onclick = function (event) {
-    event.preventDefault()
+    event.preventDefault();
     document.getElementById("returnvalue").value = "";
 }
 
-// var kiloType = document.getElementsByClassName("selectedweight").value;
-// if (kiloType === "kilogram") {
-//     document.getElementById("kgs").disabled = true;
-// } else {
-//     document.getElementById("kgs").disabled = false;
-// }
+var myAverage = document.querySelector("#selectedweight");
+
+var onlyKilo = document.querySelector("#kg");
+var onlyGrams = document.querySelector("#g");
+var onlyOunces = document.querySelector("#o");
+var onlyStones = document.querySelector("#s");
+var onlyPounds = document.querySelector("#ps");
+myAverage.addEventListener('click', function () {
+
+    if (myAverage.value === 'kilograms') {
+        onlyKilo.disabled = true;
+        onlyGrams.disabled = false;
+        onlyOunces.disabled = false;
+        onlyStones.disabled = false;
+        onlyPounds.disabled = false;
+    }
+    else if (myAverage.value === 'grams') {
+        onlyGrams.disabled = true;
+        onlyKilo.disabled = false;
+        onlyOunces.disabled = false;
+        onlyStones.disabled = false;
+        onlyPounds.disabled = false;
+    }
+    else if (myAverage.value === 'ounces') {
+        onlyOunces.disabled = true;
+        onlyGrams.disabled = false;
+        onlyKilo.disabled = false;
+        onlyStones.disabled = false;
+        onlyPounds.disabled = false;
+    }
+    else if (myAverage.value === 'stones') {
+        onlyStones.disabled = true;
+        onlyGrams.disabled = false;
+        onlyKilo.disabled = false;
+        onlyOunces.disabled = false;
+        onlyPounds.disabled = false;
+
+    }
+    else if (myAverage.value === 'pounds') {
+        onlyPounds.disabled = true;
+        onlyGrams.disabled = false;
+        onlyKilo.disabled = false;
+        onlyOunces.disabled = false;
+        onlyStones.disabled = false;
+
+    }
+
+})
+
+
 
 var convertKilograms = function (weight, convertweight) {
     const k1 = 1000
